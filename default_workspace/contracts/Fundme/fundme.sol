@@ -1,32 +1,45 @@
 //SPDX-License-Identifier: MIT
 pragma solidity ^0.8.30;
 
-contract FundMe{
-
+contract FundMe {
     address public owner;
 
     mapping(address => uint256) public user;
 
-    constructor(){
+    constructor() {
         owner = msg.sender;
     }
 
-    modifier OnlyOwner()
-    {
-        require(owner == msg.sender," only owner");
+    modifier OnlyOwner() {
+        require(owner == msg.sender, " only owner");
         _;
-    } 
-
+    }
 
     function deposite() public payable {
-        require(msg.value > 0,"0 not allowed");
+        require(msg.value > 0, "0 not allowed");
         user[msg.sender] += msg.value;
     }
+    mapping(address => bool) public isFunder;
+    address[] public funders;
 
-    function withdraw() public OnlyOwner{
+    function withdraw() public OnlyOwner {
         uint256 balance = address(this).balance;
-        (bool success,) = payable (owner).call{value: balance}("");
-        require(success,"transfered failed");
+        (bool success, ) = payable(owner).call{value: balance}("");
+        require(success, "transfered failed");
     }
+    
+    function number_of_deposite() public view OnlyOwner returns (uint256) {
+    return address(this).balance;
+}
+    function getBalance() public view returns (uint256) {
+        return address(this).balance;
+    }
+    
+    function getFunders() public view returns (address[] memory) {
+        return funders;
+    }
+    
+
+    
 
 }
