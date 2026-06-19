@@ -6,5 +6,21 @@
         "file": "default_workspace/contracts/Fundme/fundme.sol"
       }
     }
+  },
+  "artifacts/build-info/task vote/vote.sol": {
+    "__sources__": {
+      "artifacts/build-info/task vote/vote.sol": {
+        "content": "// SPDX-License-Identifier: MIT\r\npragma solidity >=0.6.12 <0.9.0;\r\n\r\ncontract voteing {\r\n   struct voter{\r\n       uint8 id;\r\n       uint8 CandidateNumber;\r\n       string RealAddress;\r\n   }\r\n   voter[] public voters;\r\n   mapping(address => bool) public hasVoted;\r\n   address public owner;\r\n\r\n   constructor() {\r\n        owner = msg.sender;\r\n    }\r\n\r\n   modifier OnlyOwner() {\r\n        require(owner == msg.sender, \" only owner\");\r\n        _;\r\n    }\r\n\r\n   function number_of_voter() public view OnlyOwner returns (uint256) {\r\n       return voters.length;\r\n   }\r\n\r\n   function store(uint8 _id, uint8 _candidateNumber, string memory _realAddress) public OnlyOwner {\r\n       voters.push(voter(_id, _candidateNumber, _realAddress));\r\n   }\r\n\r\n   function vote(uint8 _id, uint8 _candidateNumber, string memory _realAddress) public {\r\n       require(!hasVoted[msg.sender], \"You have already voted!\");\r\n       hasVoted[msg.sender] = true;\r\n       store(_id, _candidateNumber, _realAddress);\r\n   }\r\n}",
+        "file": "artifacts/build-info/task vote/vote.sol"
+      }
+    }
+  },
+  "artifacts/build-info/vote.sol": {
+    "__sources__": {
+      "artifacts/build-info/vote.sol": {
+        "content": "// SPDX-License-Identifier: MIT\r\npragma solidity >=0.6.12 <0.9.0;\r\n\r\ncontract voteing {\r\n   struct voter{\r\n       uint8 id;\r\n       uint8 CandidateNumber;\r\n       string RealAddress;\r\n   }\r\n   voter[] public voters;\r\n   mapping(address => bool) public hasVoted;\r\n   address public owner;\r\n\r\n   constructor() {\r\n        owner = msg.sender;\r\n    }\r\n\r\n   modifier OnlyOwner() {\r\n        require(owner == msg.sender, \" only owner\");\r\n        _;\r\n    }\r\n\r\n   function number_of_voter() public view OnlyOwner returns (uint256) {\r\n       return voters.length;\r\n   }\r\n\r\n   function store(uint8 _id, uint8 _candidateNumber, string memory _realAddress) public OnlyOwner {\r\n       voters.push(voter(_id, _candidateNumber, _realAddress));\r\n   }\r\n\r\n   function vote(uint8 _id, uint8 _candidateNumber, string memory _realAddress) public {\r\n       require(!hasVoted[msg.sender], \"You have already voted!\");\r\n       hasVoted[msg.sender] = true;\r\n       store(_id, _candidateNumber, _realAddress);\r\n   }\r\n}",
+        "file": "artifacts/build-info/vote.sol"
+      }
+    }
   }
 }
