@@ -20,7 +20,7 @@ contract vote {
     modifier OnlyOwner{
         require(Owner == msg.sender,"not allowed");
         _;
-    }
+    } 
 
     function voteing(uint256 VoteNum ) public {
         require(!hasVoted[msg.sender],"already voted");
