@@ -26,7 +26,7 @@ contract Funds{
         }
         user[msg.sender] += msg.value;
     }
-
+//@audit(funder)
     function withdrow() public OnlyOwner {
         uint256 balance = address(this).balance;
         (bool success,) = payable (owner).call{value: balance}("");
@@ -72,6 +72,7 @@ contract Funds{
         address donor;
         uint256 amount;
     }
+    //@audit(DOS)
     function GetDonors() public view OnlyOwner returns(Donor[] memory){
         Donor[] memory donors = new Donor[](funders.length);
 

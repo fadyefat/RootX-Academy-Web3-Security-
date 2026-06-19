@@ -1,0 +1,48 @@
+{
+	"deploy": {
+		"VM:-": {
+			"linkReferences": {},
+			"autoDeployLib": true
+		},
+		"main:1": {
+			"linkReferences": {},
+			"autoDeployLib": true
+		},
+		"sepolia:11155111": {
+			"linkReferences": {},
+			"autoDeployLib": true
+		},
+		"Custom": {
+			"linkReferences": {},
+			"autoDeployLib": true
+		}
+	},
+	"data": {
+		"bytecode": {
+			"functionDebugData": {},
+			"generatedSources": [],
+			"linkReferences": {},
+			"object": "6080604052348015600e575f5ffd5b50603e80601a5f395ff3fe60806040525f5ffdfea26469706673582212208521da2987b13ea03ede68de78619b5340b1d532c8d7f5100d49f86a307ef7b764736f6c63430008220033",
+			"opcodes": "PUSH1 0x80 PUSH1 0x40 MSTORE CALLVALUE DUP1 ISZERO PUSH1 0xE JUMPI PUSH0 PUSH0 REVERT JUMPDEST POP PUSH1 0x3E DUP1 PUSH1 0x1A PUSH0 CODECOPY PUSH0 RETURN INVALID PUSH1 0x80 PUSH1 0x40 MSTORE PUSH0 PUSH0 REVERT INVALID LOG2 PUSH5 0x6970667358 0x22 SLT KECCAK256 DUP6 0x21 0xDA 0x29 DUP8 0xB1 RETURNDATACOPY LOG0 RETURNDATACOPY 0xDE PUSH9 0xDE78619B5340B1D532 0xC8 0xD7 CREATE2 LT 0xD BLOBHASH EXTCALL PUSH11 0x307EF7B764736F6C634300 ADDMOD 0x22 STOP CALLER ",
+			"sourceMap": "61:97:0:-:0;;;;;;;;;;;;;;;;;;;"
+		},
+		"deployedBytecode": {
+			"functionDebugData": {},
+			"generatedSources": [],
+			"immutableReferences": {},
+			"linkReferences": {},
+			"object": "60806040525f5ffdfea26469706673582212208521da2987b13ea03ede68de78619b5340b1d532c8d7f5100d49f86a307ef7b764736f6c63430008220033",
+			"opcodes": "PUSH1 0x80 PUSH1 0x40 MSTORE PUSH0 PUSH0 REVERT INVALID LOG2 PUSH5 0x6970667358 0x22 SLT KECCAK256 DUP6 0x21 0xDA 0x29 DUP8 0xB1 RETURNDATACOPY LOG0 RETURNDATACOPY 0xDE PUSH9 0xDE78619B5340B1D532 0xC8 0xD7 CREATE2 LT 0xD BLOBHASH EXTCALL PUSH11 0x307EF7B764736F6C634300 ADDMOD 0x22 STOP CALLER ",
+			"sourceMap": "61:97:0:-:0;;;;;"
+		},
+		"gasEstimates": {
+			"creation": {
+				"codeDepositCost": "12400",
+				"executionCost": "64",
+				"totalCost": "12464"
+			}
+		},
+		"methodIdentifiers": {}
+	},
+	"abi": []
+}
