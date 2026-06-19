@@ -6,5 +6,8 @@
         "file": "default_workspace/contracts/Fundme/fundme.sol"
       }
     }
+  },
+  "default_workspace/contracts/voting/voting.sol": {
+    "__sources__": {}
   }
 }
